@@ -33,6 +33,7 @@ function subscribe() {
 		.then(function(pushSubscription) {
 			sub = pushSubscription;
 			console.log('Subscribed! Endpoint:', sub.endpoint);
+			console.log(JSON.stringify(sub));
 			endpointContainer.textContent = sub.endpoint.slice(40);
 			subscribeButton.textContent = 'Unsubscribe';
 			isSubscribed = true;
