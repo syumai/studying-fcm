@@ -13,14 +13,14 @@ self.addEventListener('activate', function(event) {
 
 self.addEventListener('push', function(event) {
 	console.log('Push message received', event);
-	console.log(self.registration);
-	var title = 'Push message';
+	var msg = event.data ? event.data.json() : {};
+	var title = msg.title || 'HUGVR';
 	event.waitUntil(
 			self.registration.showNotification(title, {
-				body: 'The Message',
+				body: msg.body || '',
 				icon: 'images/icon.png',
 				tag: 'my-tag',
-				vibrate: [100, 100]
+				vibrate: [200, 200]
 			})
 		);
 });
