@@ -14,6 +14,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('push', function(event) {
 	console.log('Push message received', event);
 	var msg = event.data ? event.data.json() : {};
+	console.log(msg);
 	var title = msg.title || 'HUGVR';
 	event.waitUntil(
 			self.registration.showNotification(title, {
