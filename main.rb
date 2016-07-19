@@ -1,6 +1,6 @@
 require 'webpush'
 require 'json'
-require './set_symbolize.rb'
+require './symbolize_json.rb'
 
 FCM_API_KEY = nil # Set your FCM API key
 
