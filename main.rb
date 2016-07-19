@@ -15,9 +15,9 @@ def subscription_params subscription
 end
 
 message = {
-	title: "test title",
-	body: "body",
-	url: "https://hugvr.com"
+	title: "Example title",
+	body: "Example body",
+	url: "https://example.com"
 }
 
 Webpush.payload_send(
