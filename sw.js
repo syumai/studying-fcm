@@ -21,7 +21,8 @@ self.addEventListener('push', function(event) {
 				body: msg.body || '',
 				icon: 'images/icon.png',
 				tag: 'my-tag',
-				vibrate: [200, 200]
+				vibrate: [200, 200],
+				data: {url: msg.url}
 			})
 		);
 });
@@ -29,7 +30,7 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
 	console.log('Notification click: tag ', event.notification.tag);
 	event.notification.close();
-	var url = 'http://localhost:8080';
+	var url = event.notification.data.url || 'https://hugvr.com';
 	event.waitUntil(
 			clients.matchAll({
 				type: 'window'
@@ -37,7 +38,6 @@ self.addEventListener('notificationclick', function(event) {
 			.then(function(windowClients) {
 				var isFocused  = false;
 				windowClients.forEach(function(client) {
-					console.log(client.url);
 					if(client.url.indexOf(url) >= 0 && client.focus) {
 						client.focus();
 						isFocused = true;
