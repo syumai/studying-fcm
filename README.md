@@ -11,33 +11,33 @@ bundle install
 
 1. Set your FCM API key in main.rb or environment variable
 
-```ruby:main.rb
-FCM_API_KEY = 'your api key'
-```
+	```ruby
+	FCM_API_KEY = 'your api key'
+	```
 
-or
+	or
 
-```sh
-export FCM_API_KEY='your api key'
-```
+	```sh
+	export FCM_API_KEY='your api key'
+	```
 
 2. Start server
 
-```sh
-ruby server.rb
-```
+	```sh
+	ruby server.rb
+	```
 
 3. Subscribe with a service worker and get subscription information
 
-```sh
-open http://localhost:3300
-```
+	```sh
+	open http://localhost:3300
+	```
 
-then click `Subscribe` and copy text like `'{"endpoint": ... }'`
+	then click `Subscribe` and copy text like `'{"endpoint": ... }'`
 
 4. Send push notification
 
-```sh
-ruby main.rb '{"endpoint": ... }'
-```
+	```sh
+	ruby main.rb '{"endpoint": ... }'
+	```
 
