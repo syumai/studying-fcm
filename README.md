@@ -1,5 +1,5 @@
-# STUDYING FCM
-This is sample programs of Web Push Notification with FCM(Firebase Cloud Messaging).
+# Studying FCM
+This is a sample repository for Web Push Notification with FCM(Firebase Cloud Messaging).
 
 ## Setup
 
