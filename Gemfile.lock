@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    hkdf (0.2.0)
+    webpush (0.2.3)
+      hkdf (~> 0.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  webpush
+
+BUNDLED WITH
+   1.11.2
