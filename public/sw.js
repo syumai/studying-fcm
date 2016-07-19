@@ -20,7 +20,7 @@ self.addEventListener('push', function(event) {
 			self.registration.showNotification(title, {
 				body: msg.body || '',
 				icon: 'images/icon.png',
-				tag: 'my-tag',
+				tag: 'example-tag',
 				vibrate: [200, 200],
 				data: {url: msg.url}
 			})
@@ -30,7 +30,7 @@ self.addEventListener('push', function(event) {
 self.addEventListener('notificationclick', function(event) {
 	console.log('Notification click: tag ', event.notification.tag);
 	event.notification.close();
-	var url = event.notification.data.url || 'https://hugvr.com';
+	var url = event.notification.data.url || 'http://syumai.com';
 	event.waitUntil(
 			clients.matchAll({
 				type: 'window'
